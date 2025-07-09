@@ -5,8 +5,9 @@
   height: $size-40;
   padding: 0 $padding-md 0 $padding-md;
   border-radius: $radius-full;
+  font-size: $body-md;
   font-weight: $font-weight-semibold;
-  border: $border-width-md solid transparent;
+  border: $border-width-md solid trasparent;
 
   &.primary {
     background-color: $color-brand-400;
@@ -62,5 +63,16 @@
       color: $color-border-500;
       cursor: not-allowed;
     }
+  }
+
+  &.small {
+    height: $size-32;
+    font-size: $body-sm;
+    font-weight: $font-weight-regular;
+  }
+
+  &.large {
+    height: $size-48;
+    padding: 0 $padding-lg 0 $padding-lg;
   }
 }
