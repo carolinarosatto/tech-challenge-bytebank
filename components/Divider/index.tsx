@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Divider.module.scss";
+import styles from "./styles.module.scss";
 
 type DividerProps = {
   orientation?: "horizontal" | "vertical";

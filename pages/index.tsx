@@ -1,9 +1,9 @@
-import Button from "@/components/Button/Button";
-import IconButton from "@/components/IconButton/IconButton";
 import React from "react";
+import Button from "@/components/Button";
+import IconButton from "@/components/IconButton";
+import Divider from "@/components/Divider";
+import Card from "@/components/Card";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import Divider from "@/components/Divider/Divider";
-import Card from "@/components/Card/Card";
 
 export default function Home() {
   return (
