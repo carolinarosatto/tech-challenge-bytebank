@@ -1,0 +1,16 @@
+@use "../../styles/tokens.scss" as *;
+
+.card {
+  width: 100%;
+  background-color: $color-bg-100;
+  border-radius: $radius-lg;
+  padding: $padding-sm $padding-md;
+
+  &.title {
+    font-size: $title-md;
+  }
+
+  &.secondary {
+    background-color: $color-brand-100;
+  }
+}
