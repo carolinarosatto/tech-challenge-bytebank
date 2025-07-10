@@ -4,6 +4,7 @@ import IconButton from "@/components/IconButton";
 import Divider from "@/components/Divider";
 import Card from "@/components/Card";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import InputText from "@/components/InputText";
 
 export default function Home() {
   return (
@@ -44,6 +45,17 @@ export default function Home() {
             <p>Conteúdo do Card</p>
           </Card>
         </div>
+      </div>
+      <div style={{ width: "200px" }}>
+        <InputText
+          labelText="Valor"
+          value=""
+          onChange={() => {}}
+          placeholder="Digite algo"
+          // errorMessage="Campo obrigatório"
+          // isError={true}
+          disabled={true}
+        />
       </div>
     </>
   );
