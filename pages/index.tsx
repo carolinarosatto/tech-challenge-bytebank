@@ -5,6 +5,7 @@ import Divider from "@/components/Divider";
 import Card from "@/components/Card";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import InputText from "@/components/InputText";
+import InputSelect from "@/components/InputSelect";
 
 export default function Home() {
   return (
@@ -54,6 +55,20 @@ export default function Home() {
           placeholder="Digite algo"
           // errorMessage="Campo obrigatório"
           // isError={true}
+          disabled={true}
+        />
+      </div>
+      <div style={{ width: "200px" }}>
+        <InputSelect
+          labelText="Selecione uma opção"
+          value=""
+          onChange={() => {}}
+          options={[
+            { value: "opcao1", label: "Opção 1" },
+            { value: "opcao2", label: "Opção 2" },
+            { value: "opcao3", label: "Opção 3" },
+          ]}
+          placeholder="Selecione"
           disabled={true}
         />
       </div>
