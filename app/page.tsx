@@ -1,10 +1,12 @@
 import React from "react";
-import Header from "./login/page";
+import Login from "./login/page";
+import BenefitsList from "./login/components/BenefitsList";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <Login />
+      <BenefitsList />
     </>
   );
 }

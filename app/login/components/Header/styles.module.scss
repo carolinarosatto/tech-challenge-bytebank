@@ -1,0 +1,50 @@
+@use "../../../../styles/tokens.scss" as *;
+
+.header {
+  height: $size-96;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: $color-bg-100;
+
+  .logo {
+    font-size: $title-md;
+    font-weight: $font-weight-semibold;
+    color: $color-brand-500;
+  }
+
+  .leftContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .navList {
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: $body-lg;
+    font-weight: $font-weight-medium;
+
+    .navLink {
+      display: inline-block;
+      padding: $padding-sm $padding-md;
+      color: $color-text-300;
+      &:hover {
+        color: $color-brand-600;
+      }
+
+      &.active {
+        color: $color-primary-accent-300;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}

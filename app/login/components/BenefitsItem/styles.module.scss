@@ -1,0 +1,35 @@
+@use "../../../../styles/tokens.scss" as *;
+
+.benefits-item {
+  width: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+  // width: $size-96; // 96px
+  // height: $size-96; // 96px
+  // background-color: $color-white;
+  // border-radius: $radius-8; // 8px
+  // box-shadow: $shadow-2; // shadow-2
+
+  // &__icon {
+  //   width: $size-64; // 64px
+  //   height: $size-64; // 64px
+  //   margin-bottom: $spacing-16; // 16px
+  // }
+
+  // &__title {
+  //   font-size: $font-size-16; // 16px
+  //   font-weight: $font-weight-bold; // bold
+  //   color: $color-primary;
+  //   text-align: center;
+  //   margin-bottom: $spacing-8; // 8px
+  // }
+
+  // &__description {
+  //   font-size: $font-size-14; // 14px
+  //   color: $color-secondary;
+  //   text-align: center;
+  //   line-height: $line-height-20; // 20px
+  // }
+}
