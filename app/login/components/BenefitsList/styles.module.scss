@@ -1,6 +1,7 @@
-@use "../../styles.module.scss" as *;
+@use "../../../../styles/tokens.scss" as *;
 
 .benefitsList {
   display: flex;
   flex-direction: row;
+  // padding: $padding-none $padding-lg;
 }
