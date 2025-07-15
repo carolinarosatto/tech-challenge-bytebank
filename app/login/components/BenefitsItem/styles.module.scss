@@ -1,35 +1,31 @@
 @use "../../../../styles/tokens.scss" as *;
 
-.benefits-item {
+.benefitsItem {
   width: 100%;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
-  // width: $size-96; // 96px
-  // height: $size-96; // 96px
-  // background-color: $color-white;
-  // border-radius: $radius-8; // 8px
-  // box-shadow: $shadow-2; // shadow-2
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: $margin-none $margin-md;
+  text-align: center;
 
-  // &__icon {
-  //   width: $size-64; // 64px
-  //   height: $size-64; // 64px
-  //   margin-bottom: $spacing-16; // 16px
-  // }
+  svg {
+    width: $size-40;
+    height: $size-40;
+    fill: $color-brand-400;
+  }
 
-  // &__title {
-  //   font-size: $font-size-16; // 16px
-  //   font-weight: $font-weight-bold; // bold
-  //   color: $color-primary;
-  //   text-align: center;
-  //   margin-bottom: $spacing-8; // 8px
-  // }
+  .title {
+    font-size: $body-lg;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    margin: $margin-md $margin-none;
+  }
 
-  // &__description {
-  //   font-size: $font-size-14; // 14px
-  //   color: $color-secondary;
-  //   text-align: center;
-  //   line-height: $line-height-20; // 20px
-  // }
+  .description {
+    font-size: $body-md;
+    color: $color-text-200;
+    text-align: center;
+    line-height: $line-height-sm;
+  }
 }

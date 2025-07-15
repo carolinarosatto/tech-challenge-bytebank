@@ -1,15 +1,19 @@
 @use "styles/tokens.scss" as *;
 
+* {
+  font-family: $font-family-sans;
+  margin: $margin-none;
+  padding: $padding-none;
+}
+
+body {
+  padding: $padding-none $padding-xl;
+}
+
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  padding: 0px;
-  margin: 0px;
-}
-
-* {
-  font-family: $font-family-sans;
 }
 
 li {
