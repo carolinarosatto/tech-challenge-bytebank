@@ -3,5 +3,6 @@
 .benefitsList {
   display: flex;
   flex-direction: row;
-  // padding: $padding-none $padding-lg;
+  justify-content: space-around;
+  padding: $padding-none $padding-lg;
 }
