@@ -1,0 +1,21 @@
+@use "../../../../styles/tokens.scss" as *;
+
+.mainContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .container {
+    width: 20rem;
+
+    .title {
+      font-size: $heading;
+      margin-bottom: $margin-lg;
+    }
+
+    .text {
+      font-size: $title-sm;
+    }
+  }
+}
