@@ -1,0 +1,10 @@
+@use "../../../../styles/tokens.scss" as *;
+
+.container {
+  padding-top: $padding-xl;
+  height: 100vh;
+  background-color: $color-brand-400;
+  display: flex;
+  flex-direction: column;
+  width: 16rem;
+}
