@@ -17,7 +17,7 @@ const MainContent = () => {
           width={0}
           height={0}
           sizes="100vw"
-          style={{ width: "32rem", height: "auto" }}
+          style={{ width: "28rem", height: "auto" }}
           src="/lp_img.png"
           alt=""
         />

@@ -7,12 +7,14 @@ type ButtonProps = {
   size?: "small" | "medium" | "large";
   onClick?: () => void;
   disabled?: boolean;
+  reverse?: boolean;
 };
 
 const Button: React.FC<ButtonProps> = ({
   label,
   priority = "primary",
   size = "medium",
+  reverse = false,
   onClick,
   disabled = false,
 }) => {
@@ -20,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       className={`${styles.button} ${styles[priority]} ${
         disabled ? styles.disabled : ""
-      } ${styles[size]}`}
+      } ${styles[size]} ${reverse ? styles.reverse : ""}`}
       onClick={disabled ? undefined : onClick}
       disabled={disabled}
     >

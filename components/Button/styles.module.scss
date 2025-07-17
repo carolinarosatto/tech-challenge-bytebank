@@ -63,6 +63,9 @@
       color: $color-border-500;
       cursor: not-allowed;
     }
+    &.reverse {
+      color: $color-text-100;
+    }
   }
 
   &.small {
