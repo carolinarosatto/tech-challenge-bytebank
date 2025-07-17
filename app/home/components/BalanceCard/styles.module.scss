@@ -2,4 +2,16 @@
 
 .container {
   width: 16rem;
+
+  .text {
+    font-size: $title-sm;
+    font-weight: $font-weight-bold;
+  }
+
+  .innerCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
