@@ -4,10 +4,11 @@
   width: 100%;
   background-color: $color-bg-100;
   border-radius: $radius-lg;
-  padding: $padding-sm $padding-md;
+  padding: $padding-md $padding-md;
 
-  &.title {
-    font-size: $title-md;
+  .title {
+    font-size: $title-sm;
+    margin-bottom: $margin-sm;
   }
 
   &.secondary {

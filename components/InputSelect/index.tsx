@@ -11,14 +11,14 @@ export interface InputSelectProps {
   disabled?: boolean;
 }
 
-const InputSelect: React.FC<InputSelectProps> = ({
+export default function InputSelect({
   labelText,
   value,
   onChange,
   options,
   placeholder,
   disabled = false,
-}) => {
+}: InputSelectProps) {
   return (
     <div className={styles.inputSelectContainer}>
       {labelText && <label className={styles.label}>{labelText}</label>}
@@ -44,6 +44,4 @@ const InputSelect: React.FC<InputSelectProps> = ({
       </div>
     </div>
   );
-};
-
-export default InputSelect;
+}

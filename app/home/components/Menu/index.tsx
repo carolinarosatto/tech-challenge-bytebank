@@ -1,7 +1,7 @@
 import Button from "@/components/Button";
 import styles from "./styles.module.scss";
 
-const Menu = () => {
+export default function Menu() {
   return (
     <div className={styles.container}>
       <div className={styles.buttons}>
@@ -27,6 +27,4 @@ const Menu = () => {
       </div>
     </div>
   );
-};
-
-export default Menu;
+}

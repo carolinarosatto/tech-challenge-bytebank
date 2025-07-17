@@ -7,11 +7,11 @@ type BenefitsItemProps = {
   description: string;
 };
 
-const BenefitsItem: React.FC<BenefitsItemProps> = ({
+export default function BenefitsItem({
   icon,
   title,
   description,
-}) => {
+}: BenefitsItemProps) {
   return (
     <div className={styles.benefitsItem}>
       <div className={styles.icon}>{icon}</div>
@@ -19,6 +19,4 @@ const BenefitsItem: React.FC<BenefitsItemProps> = ({
       <p className={styles.description}>{description}</p>
     </div>
   );
-};
-
-export default BenefitsItem;
+}

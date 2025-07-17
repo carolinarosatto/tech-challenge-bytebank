@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Button from "@/components/Button";
 
-const Header = () => {
+export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.leftContainer}>
@@ -28,6 +28,4 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}

@@ -1,14 +1,14 @@
 import BalanceCard from "./components/BalanceCard";
-// import Menu from "./components/Menu";
+import Menu from "./components/Menu";
 import styles from "./styles.module.scss";
 
-const Home = () => {
+export default function Home() {
   return (
     <div className={styles.container}>
-      {/* <Menu /> */}
-      <BalanceCard />
+      <Menu />
+      <section className={styles.content}>
+        <BalanceCard />
+      </section>
     </div>
   );
-};
-
-export default Home;
+}

@@ -9,13 +9,13 @@ type IconButtonProps = {
   size?: "small" | "medium" | "large";
 };
 
-const IconButton: React.FC<IconButtonProps> = ({
+export default function IconButton({
   icon,
   onClick,
   priority = "primary",
   disabled = false,
   size = "medium",
-}) => {
+}: IconButtonProps) {
   return (
     <button
       className={`${styles.iconButton} ${styles[priority]} ${styles[size]} ${
@@ -27,6 +27,4 @@ const IconButton: React.FC<IconButtonProps> = ({
       {icon}
     </button>
   );
-};
-
-export default IconButton;
+}

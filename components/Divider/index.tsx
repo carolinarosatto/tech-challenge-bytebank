@@ -6,14 +6,13 @@ type DividerProps = {
   weight?: "thin" | "bold";
 };
 
-const Divider: React.FC<DividerProps> = ({
+export default function Divider({
   orientation = "horizontal",
-  weight = "medium",
-}) => {
+  weight = "thin",
+}: DividerProps) {
   return (
     <div
       className={`${styles.divider} ${styles[orientation]} ${styles[weight]}`}
     />
   );
-};
-export default Divider;
+}

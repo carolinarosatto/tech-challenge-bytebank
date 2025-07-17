@@ -7,12 +7,15 @@ type CardProps = {
   color?: "primary" | "secondary";
 };
 
-const Card: React.FC<CardProps> = ({ title, children, color = "primary" }) => {
+export default function Card({
+  title,
+  children,
+  color = "primary",
+}: CardProps) {
   return (
     <div className={`${styles.card} ${styles[color]}`}>
       {title && <h3 className={styles.title}>{title}</h3>}
       <div className={styles.content}>{children}</div>
     </div>
   );
-};
-export default Card;
+}

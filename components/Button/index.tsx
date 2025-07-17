@@ -10,14 +10,14 @@ type ButtonProps = {
   reverse?: boolean;
 };
 
-const Button: React.FC<ButtonProps> = ({
+export default function Button({
   label,
   priority = "primary",
   size = "medium",
   reverse = false,
   onClick,
   disabled = false,
-}) => {
+}: ButtonProps) {
   return (
     <button
       className={`${styles.button} ${styles[priority]} ${
@@ -29,6 +29,4 @@ const Button: React.FC<ButtonProps> = ({
       {label}
     </button>
   );
-};
-
-export default Button;
+}

@@ -11,15 +11,15 @@ type InputTextProps = {
   labelText?: string;
 };
 
-const InputText: React.FC<InputTextProps> = ({
+export default function InputText({
   value,
   onChange,
   placeholder = "",
   disabled = false,
   errorMessage = "",
-  isError = false,
+  isError,
   labelText = "",
-}) => {
+}: InputTextProps) {
   return (
     <div className={styles.inputContainer}>
       {labelText && <label className={styles.label}>{labelText}</label>}
@@ -33,6 +33,4 @@ const InputText: React.FC<InputTextProps> = ({
       {isError && <span className={styles.errorMessage}>{errorMessage}</span>}
     </div>
   );
-};
-
-export default InputText;
+}

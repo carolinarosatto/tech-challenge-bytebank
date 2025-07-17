@@ -6,7 +6,7 @@ import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import DevicesIcon from "@mui/icons-material/Devices";
 import styles from "./styles.module.scss";
 
-const BenefitsList = () => {
+export default function BenefitsList() {
   return (
     <div className={styles.benefitsList}>
       <BenefitsItem
@@ -31,6 +31,4 @@ const BenefitsList = () => {
       />
     </div>
   );
-};
-
-export default BenefitsList;
+}
