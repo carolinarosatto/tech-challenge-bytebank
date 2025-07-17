@@ -17,7 +17,7 @@ export default function InputText({
   placeholder = "",
   disabled = false,
   errorMessage = "",
-  isError,
+  isError = false,
   labelText = "",
 }: InputTextProps) {
   return (

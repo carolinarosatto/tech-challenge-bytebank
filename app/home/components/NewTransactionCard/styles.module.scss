@@ -1,0 +1,19 @@
+@use "../../../../styles/tokens.scss" as *;
+
+.container {
+  flex: 1;
+  margin: $margin-none $margin-md;
+
+  .content {
+    padding: $padding-md;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .title {
+    margin-bottom: $margin-lg;
+    font-size: $title-sm;
+    font-weight: $font-weight-semibold;
+  }
+}
