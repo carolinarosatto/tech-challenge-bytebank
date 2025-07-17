@@ -2,7 +2,7 @@
 
 .benefitsList {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: $padding-none $padding-lg;
+  margin: $size-56;
 }
