@@ -7,21 +7,25 @@
   background-color: $color-brand-100;
 }
 
-.container > :first-child {
-  width: 16rem;
-  flex-shrink: 0;
+.main {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
 }
 
 .content {
   display: grid;
-  grid-template-columns: 1fr 28rem; // coluna esquerda e direita
-  flex: 1; // ocupa todo o espaço restante ao lado do Menu
-  min-height: 0; // fundamental para o scroll funcionar
+  grid-template-columns: 1fr 28rem;
   gap: 1rem;
   padding: 1rem;
+  min-width: 0;
+  min-height: 0;
 }
 .leftColumn {
   display: grid;
-  grid-template-rows: auto 1fr; // BalanceCard + StatementList
-  min-height: 0; // libera o StatementList para scrollar
+  grid-template-rows: auto 1fr;
+  min-height: 0;
+  min-width: 0;
 }

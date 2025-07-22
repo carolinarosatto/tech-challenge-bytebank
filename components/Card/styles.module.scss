@@ -8,6 +8,7 @@
   border-radius: $radius-lg;
   padding: $padding-lg $padding-lg;
   min-height: 0;
+  height: 100%;
 
   .title {
     font-size: $title-sm;
@@ -23,7 +24,6 @@
   .content {
     flex: 1;
     min-height: 0;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
     padding: $padding-sm $padding-none;

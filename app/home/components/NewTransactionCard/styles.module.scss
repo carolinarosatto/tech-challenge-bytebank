@@ -1,17 +1,13 @@
 @use "../../../../styles/tokens.scss" as *;
 
-.container {
-  height: 100%;
-  .content {
-    padding: $padding-md;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  .title {
-    margin-bottom: $margin-lg;
-    font-size: $title-sm;
-    font-weight: $font-weight-semibold;
-  }
+.title {
+  margin-bottom: $margin-lg;
+  font-size: $title-sm;
+  font-weight: $font-weight-semibold;
 }
