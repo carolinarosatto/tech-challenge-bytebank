@@ -7,10 +7,21 @@
   background-color: $color-brand-100;
 }
 
+.container > :first-child {
+  width: 16rem;
+  flex-shrink: 0;
+}
+
 .content {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  overflow-y: auto;
-  padding: $padding-md;
+  display: grid;
+  grid-template-columns: 1fr 28rem; // coluna esquerda e direita
+  flex: 1; // ocupa todo o espaço restante ao lado do Menu
+  min-height: 0; // fundamental para o scroll funcionar
+  gap: 1rem;
+  padding: 1rem;
+}
+.leftColumn {
+  display: grid;
+  grid-template-rows: auto 1fr; // BalanceCard + StatementList
+  min-height: 0; // libera o StatementList para scrollar
 }

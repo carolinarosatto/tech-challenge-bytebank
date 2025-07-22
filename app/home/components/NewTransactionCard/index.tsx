@@ -18,7 +18,7 @@ export default function NewTransactionCard() {
             height={0}
             sizes="100vw"
             style={{
-              width: "22rem",
+              width: "26rem",
               height: "auto",
               display: "flex",
               alignSelf: "center",

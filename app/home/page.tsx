@@ -1,6 +1,7 @@
 import BalanceCard from "./components/BalanceCard";
 import Menu from "./components/Menu";
 import NewTransactionCard from "./components/NewTransactionCard";
+import StatementList from "./components/StatementList";
 import styles from "./styles.module.scss";
 
 export default function Home() {
@@ -8,7 +9,10 @@ export default function Home() {
     <div className={styles.container}>
       <Menu />
       <section className={styles.content}>
-        <BalanceCard />
+        <div className={styles.leftColumn}>
+          <BalanceCard />
+          <StatementList />
+        </div>
         <NewTransactionCard />
       </section>
     </div>

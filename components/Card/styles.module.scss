@@ -1,18 +1,31 @@
 @use "../../styles/tokens.scss" as *;
 
 .card {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   background-color: $color-bg-100;
   border-radius: $radius-lg;
-  padding: $padding-md $padding-md;
+  padding: $padding-lg $padding-lg;
+  min-height: 0;
 
   .title {
     font-size: $title-sm;
     margin-bottom: $margin-sm;
     font-weight: $font-weight-semibold;
+    flex-shrink: 0;
   }
 
   &.secondary {
     background-color: $color-brand-100;
+  }
+
+  .content {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: $padding-sm $padding-none;
   }
 }
