@@ -2,6 +2,7 @@ import Divider from "@/components/Divider";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import styles from "./styles.module.scss";
+import Modal from "../Modal";
 
 type TransactionItemProps = {
   hasDivider?: boolean;
