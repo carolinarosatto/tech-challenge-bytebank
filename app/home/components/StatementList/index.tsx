@@ -1,3 +1,5 @@
+"use client";
+
 import Card from "@/components/Card";
 import TransactionItem from "../TransactionItem";
 import styles from "./styles.module.scss";

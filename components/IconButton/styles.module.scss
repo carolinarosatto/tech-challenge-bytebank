@@ -5,6 +5,7 @@
   border-radius: $radius-full;
   height: $size-56;
   width: $size-56;
+  cursor: pointer;
 
   svg {
     width: $size-40;
@@ -49,6 +50,24 @@
     &.disabled {
       color: $color-border-500;
       border: $border-width-md solid $color-border-200;
+      cursor: not-allowed;
+    }
+  }
+
+  &.tertiary {
+    color: $color-brand-400;
+    border: none;
+    background: none;
+
+    &:hover {
+      color: $color-brand-500;
+    }
+
+    &:active {
+      color: $color-primary-accent-200;
+    }
+    &.disabled {
+      color: $color-border-500;
       cursor: not-allowed;
     }
   }

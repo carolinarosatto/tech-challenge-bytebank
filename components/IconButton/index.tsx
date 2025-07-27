@@ -3,9 +3,9 @@ import styles from "./styles.module.scss";
 
 type IconButtonProps = {
   icon: React.ReactNode;
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
-  priority?: "primary" | "secondary";
+  priority?: "primary" | "secondary" | "tertiary";
   size?: "small" | "medium" | "large";
 };
 

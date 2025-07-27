@@ -1,7 +1,6 @@
 import BalanceCard from "./components/BalanceCard";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
-import Modal from "./components/Modal";
 import NewTransactionCard from "./components/NewTransactionCard";
 import StatementList from "./components/StatementList";
 import styles from "./styles.module.scss";
@@ -20,7 +19,6 @@ export default function Home() {
           <NewTransactionCard />
         </section>
       </div>
-      <Modal />
     </div>
   );
 }
