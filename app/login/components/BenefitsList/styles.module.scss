@@ -1,8 +1,19 @@
 @use "../../../../styles/tokens.scss" as *;
+@use "../../../../styles/mixins.scss" as *;
 
 .benefitsList {
-  display: flex;
-  justify-content: space-evenly;
-  padding: $padding-none $padding-lg;
-  margin: $size-56;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // 4 colunas do mesmo tamanho
+  gap: 1rem;
+  align-items: start;
+  justify-items: center;
+  width: 100%;
+
+  @include tablet-portrait {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile-only {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

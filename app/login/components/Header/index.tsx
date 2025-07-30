@@ -23,7 +23,7 @@ export default function Header() {
         </nav>
       </div>
       <div className={styles.buttons}>
-        <Button label="Abrir minha conta" />
+        <Button label="Abrir conta" />
         <Button label="Já tenho conta" priority="secondary" />
       </div>
     </header>

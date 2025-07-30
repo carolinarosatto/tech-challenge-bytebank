@@ -45,7 +45,7 @@ export default function TransactionItem({
               styles.value
             }`}
           >
-            + R$50,00
+            {isCashWithdrawal ? "- R$50,00" : "+ R$50,00"}
           </p>
         </div>
       </div>

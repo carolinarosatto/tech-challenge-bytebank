@@ -1,4 +1,5 @@
 @use "../../../../styles/tokens.scss" as *;
+@use "../../../../styles/mixins.scss" as *;
 
 .header {
   height: $size-72;
@@ -8,10 +9,19 @@
   background-color: $color-bg-100;
   padding: $padding-lg;
 
+  @include tablet-portrait {
+    height: $size-56;
+    padding: $padding-md;
+  }
+
   .logo {
     font-size: $title-md;
     font-weight: $font-weight-semibold;
     color: $color-brand-500;
+
+    @include tablet-portrait {
+      font-size: $title-sm;
+    }
   }
 
   .leftContainer {
@@ -39,6 +49,10 @@
       &.active {
         color: $color-primary-accent-300;
       }
+
+      @include tablet-portrait {
+        font-size: $body-sm;
+      }
     }
   }
 
@@ -46,5 +60,8 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    @include tablet-portrait {
+      gap: 0.5rem;
+    }
   }
 }
