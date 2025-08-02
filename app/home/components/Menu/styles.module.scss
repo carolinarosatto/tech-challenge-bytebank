@@ -1,11 +1,18 @@
 @use "../../../../styles/tokens.scss" as *;
+@use "../../../../styles/mixins.scss" as *;
 
 .container {
-  height: 100vh;
-  background-color: $color-brand-400;
-  display: flex;
-  flex-direction: column;
-  width: 16rem;
-  padding-top: $padding-xl;
+  position: relative;
   flex-shrink: 0;
+  width: 14rem;
+  height: 100%;
+  background-color: $color-brand-400;
+}
+
+.buttons {
+  margin-top: $margin-lg;
+}
+
+.isMenuClosed {
+  width: 5rem;
 }

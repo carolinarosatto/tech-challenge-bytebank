@@ -10,14 +10,18 @@ export default function Home() {
     <div className={styles.container}>
       <Menu />
       <div className={styles.main}>
-        <Header />
-        <section className={styles.content}>
-          <div className={styles.leftColumn}>
+        <div className={styles.layout}>
+          <Header />
+        </div>
+        <div className={styles.content}>
+          <div className={styles.left}>
             <BalanceCard />
             <StatementList />
           </div>
-          <NewTransactionCard />
-        </section>
+          <div className={styles.right}>
+            <NewTransactionCard />
+          </div>
+        </div>
       </div>
     </div>
   );

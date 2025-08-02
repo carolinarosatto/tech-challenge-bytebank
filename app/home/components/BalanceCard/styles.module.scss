@@ -1,7 +1,6 @@
 @use "../../../../styles/tokens.scss" as *;
 
 .container {
-  flex: 1;
   margin-bottom: $margin-md;
   .text {
     font-size: $title-sm;

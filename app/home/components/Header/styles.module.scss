@@ -3,8 +3,16 @@
 .container {
   flex-shrink: 0;
   padding: $padding-sm $padding-lg;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+  }
+
+  .title {
+    font-size: $body-lg;
+    margin-right: $margin-md;
+  }
 }

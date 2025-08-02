@@ -6,13 +6,13 @@
   flex: 1;
   background-color: $color-bg-100;
   border-radius: $radius-lg;
-  padding: $padding-lg $padding-lg;
+  padding: $padding-md $padding-lg;
   min-height: 0;
-  height: 100%;
 
   .title {
     font-size: $title-sm;
     margin-bottom: $margin-sm;
+    margin-top: $margin-md;
     font-weight: $font-weight-semibold;
     flex-shrink: 0;
   }

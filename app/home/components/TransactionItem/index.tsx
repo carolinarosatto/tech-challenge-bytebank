@@ -24,33 +24,39 @@ export default function TransactionItem({
 
   return (
     <>
-      <div className={styles.container}>
-        <div className={styles.leftColumn}>
-          <p className={styles.title}>Tipo de transação</p>
-          <p className={styles.date}>12 de abril de 2025</p>
-          <IconButton
-            priority="tertiary"
-            size="small"
-            icon={<EditIcon />}
-            onClick={() => {
-              console.log("Abriu um modal");
-              handleModal();
-            }}
-          />
-          <IconButton priority="tertiary" size="small" icon={<DeleteIcon />} />
+      <div>
+        <div className={styles.container}>
+          <div className={styles.leftColumn}>
+            <p className={styles.title}>Tipo de transação</p>
+            <p className={styles.date}>12 de abril de 2025</p>
+            <IconButton
+              priority="tertiary"
+              size="small"
+              icon={<EditIcon />}
+              onClick={() => {
+                console.log("Abriu um modal");
+                handleModal();
+              }}
+            />
+            <IconButton
+              priority="tertiary"
+              size="small"
+              icon={<DeleteIcon />}
+            />
+          </div>
+          <div className={styles.rightColumn}>
+            <p
+              className={` ${isCashWithdrawal ? styles.isCashWithdrawal : ""} ${
+                styles.value
+              }`}
+            >
+              {isCashWithdrawal ? "- R$50,00" : "+ R$50,00"}
+            </p>
+          </div>
         </div>
-        <div className={styles.rightColumn}>
-          <p
-            className={` ${isCashWithdrawal ? styles.isCashWithdrawal : ""} ${
-              styles.value
-            }`}
-          >
-            {isCashWithdrawal ? "- R$50,00" : "+ R$50,00"}
-          </p>
-        </div>
+        {hasDivider ? <Divider weight="bold" /> : null}
+        <Modal isOpened={isOpen} handleModal={handleModal} />
       </div>
-      {hasDivider ? <Divider weight="bold" /> : null}
-      <Modal isOpened={isOpen} handleModal={handleModal} />
     </>
   );
 }
