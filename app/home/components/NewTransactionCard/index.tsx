@@ -32,9 +32,12 @@ export default function NewTransactionCard() {
             placeholder="Selecione o tipo de transação"
             onChange={() => {}}
             options={[
-              { value: "opcao1", label: "Opção 1" },
-              { value: "opcao2", label: "Opção 2" },
-              { value: "opcao3", label: "Opção 3" },
+              { value: "deposit", label: "Depósito" },
+              { value: "withdrawal", label: "Saque" },
+              { value: "investment", label: "Investimento" },
+              { value: "payment", label: "Pagamento" },
+              { value: "transfer", label: "Transferência" },
+              { value: "other", label: "Outro" },
             ]}
           />
           <div style={{ height: "1.5rem" }}></div>

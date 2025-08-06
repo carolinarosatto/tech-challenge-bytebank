@@ -25,4 +25,8 @@ export class Client {
         : balance - tx.amount;
     }, 0);
   }
+
+  addTransaction(transaction: Transaction) {
+    this.transactions.push(transaction);
+  }
 }

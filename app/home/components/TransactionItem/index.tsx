@@ -5,16 +5,20 @@ import styles from "./styles.module.scss";
 import Modal from "../Modal";
 import { useState } from "react";
 import IconButton from "@/components/IconButton";
+import { Transaction } from "@/models/Transaction";
+import { capitalize, formatDate } from "@/utils";
 
 type TransactionItemProps = {
+  id?: string;
+  transaction: Transaction;
   hasDivider?: boolean;
-  isCashWithdrawal?: boolean;
   isOpened?: boolean;
 };
 
 export default function TransactionItem({
+  id,
+  transaction,
   hasDivider = true,
-  isCashWithdrawal = false,
 }: TransactionItemProps) {
   const [isOpen, setisOpen] = useState(false);
 
@@ -22,19 +26,21 @@ export default function TransactionItem({
     setisOpen((prev) => !prev);
   };
 
+  const isCashWithdrawal = transaction.direction === "outcome";
+
   return (
     <>
-      <div>
+      <div id={id}>
         <div className={styles.container}>
           <div className={styles.leftColumn}>
-            <p className={styles.title}>Tipo de transação</p>
-            <p className={styles.date}>12 de abril de 2025</p>
+            <p className={styles.title}>{capitalize(transaction.type)}</p>
+            <p className={styles.date}>{formatDate(transaction.date)}</p>
             <IconButton
               priority="tertiary"
               size="small"
               icon={<EditIcon />}
               onClick={() => {
-                console.log("Abriu um modal");
+                console.log("Abriu um modal" + transaction.id);
                 handleModal();
               }}
             />
@@ -50,7 +56,7 @@ export default function TransactionItem({
                 styles.value
               }`}
             >
-              {isCashWithdrawal ? "- R$50,00" : "+ R$50,00"}
+              {transaction.formattedAmount()}
             </p>
           </div>
         </div>
