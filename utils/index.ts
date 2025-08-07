@@ -10,6 +10,10 @@ export function formatDate(date: string): string {
   });
 }
 
-export function formatCurrency(currency: number) {
-  return currency.toFixed(2).replace(".", ",");
+export function formatCurrency(value: number): string {
+  return new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: 2,
+  }).format(value);
 }

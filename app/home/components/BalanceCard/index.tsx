@@ -1,12 +1,27 @@
 import Card from "@/components/Card";
 import styles from "./styles.module.scss";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import { clients } from "@/data";
 import { formatCurrency } from "@/utils";
+import { Transaction } from "@/models/Transaction";
+import { useMemo } from "react";
 
-export default function BalanceCard() {
-  const client = clients[0];
-  const isNegativeBalance = client.calculateBalance() < 0;
+interface BalanceCardProps {
+  transactions: Transaction[];
+}
+
+export default function BalanceCard({ transactions }: BalanceCardProps) {
+  function calculateBalance(transactions: Transaction[]): number {
+    return transactions.reduce((acc, tx) => {
+      if (tx.direction === "income") {
+        return acc + tx.amount;
+      } else if (tx.direction === "outcome") {
+        return acc - tx.amount;
+      }
+      return acc;
+    }, 0);
+  }
+  const isNegativeBalance = calculateBalance(transactions) < 0;
+  const saldo = useMemo(() => calculateBalance(transactions), [transactions]);
 
   return (
     <div className={styles.container}>
@@ -18,7 +33,7 @@ export default function BalanceCard() {
                 isNegativeBalance ? styles.isNegativeBalance : ""
               }`}
             >
-              R$ {formatCurrency(client.calculateBalance())}
+              {formatCurrency(saldo)}
             </p>
             <VisibilityOffIcon />
           </div>

@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 
 type InputTextProps = {
   value: string;
-  onChange: (value: string) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   disabled?: boolean;
   errorMessage?: string;
@@ -25,7 +25,7 @@ export default function InputText({
       {labelText && <label className={styles.label}>{labelText}</label>}
       <input
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={onChange}
         placeholder={placeholder}
         disabled={disabled}
         className={`${styles.input} ${isError ? styles.error : ""}`}

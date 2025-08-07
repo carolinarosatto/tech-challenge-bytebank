@@ -1,11 +1,23 @@
+"use client";
+
+import { Transaction } from "@/models/Transaction";
 import BalanceCard from "./components/BalanceCard";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import NewTransactionCard from "./components/NewTransactionCard";
 import StatementList from "./components/StatementList";
 import styles from "./styles.module.scss";
+import { useState } from "react";
+import { transactions as mockTransactions } from "@/data/index";
 
 export default function Home() {
+  const [transactions, setTransactions] =
+    useState<Transaction[]>(mockTransactions);
+
+  const handleAddTransaction = (tx: Transaction) => {
+    setTransactions((prev) => [tx, ...prev]);
+  };
+
   return (
     <div className={styles.container}>
       <Menu />
@@ -15,11 +27,11 @@ export default function Home() {
         </div>
         <div className={styles.content}>
           <div className={styles.left}>
-            <BalanceCard />
-            <StatementList />
+            <BalanceCard transactions={transactions} />
+            <StatementList transactions={transactions} />
           </div>
           <div className={styles.right}>
-            <NewTransactionCard />
+            <NewTransactionCard onAdd={handleAddTransaction} />
           </div>
         </div>
       </div>

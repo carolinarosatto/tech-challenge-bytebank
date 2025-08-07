@@ -5,7 +5,7 @@ import { ExpandMore } from "@mui/icons-material";
 export interface InputSelectProps {
   labelText?: string;
   value: string;
-  onChange: (value: string) => void;
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   options: { value: string; label: string }[];
   placeholder?: string;
   disabled?: boolean;
@@ -26,7 +26,7 @@ export default function InputSelect({
         <select
           className={styles.select}
           value={value}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={onChange}
           disabled={disabled}
         >
           {placeholder && (

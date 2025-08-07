@@ -35,9 +35,12 @@ export default function Modal({ isOpened, handleModal }: ModalProps) {
                 placeholder="Selecione o tipo de transação"
                 onChange={() => {}}
                 options={[
-                  { value: "opcao1", label: "Opção 1" },
-                  { value: "opcao2", label: "Opção 2" },
-                  { value: "opcao3", label: "Opção 3" },
+                  { value: "depósito", label: "Depósito" },
+                  { value: "saque", label: "Saque" },
+                  { value: "investimento", label: "Investimento" },
+                  { value: "pagamento", label: "Pagamento" },
+                  { value: "transferência", label: "Transferência" },
+                  { value: "outro", label: "Outro" },
                 ]}
               />
               <InputText

@@ -21,15 +21,24 @@ export class Transaction {
     amount: number,
     date: string,
     direction: TransactionDirection,
-    transactionType: TransactionType
+    type: TransactionType
   ) {
     this.id = id;
     this.clientId = clientId;
     this.amount = amount;
     this.date = date;
     this.direction = direction;
-    this.type = transactionType;
+    this.type = type;
   }
+
+  static typeToDirectionMap: Record<TransactionType, TransactionDirection> = {
+    depósito: "income",
+    saque: "outcome",
+    investimento: "income",
+    pagamento: "outcome",
+    transferência: "outcome",
+    outro: "outcome",
+  };
 
   formattedAmount(): string {
     const sign = this.direction === "income" ? "+" : "-";
@@ -42,5 +51,9 @@ export class Transaction {
       month: "long",
       year: "numeric",
     });
+  }
+
+  static getDirectionFromType(type: TransactionType): TransactionDirection {
+    return this.typeToDirectionMap[type];
   }
 }
