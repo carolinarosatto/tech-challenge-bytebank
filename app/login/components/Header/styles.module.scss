@@ -18,6 +18,7 @@
     font-size: $title-md;
     font-weight: $font-weight-semibold;
     color: $color-brand-500;
+    margin-right: $margin-md;
 
     @include tablet-portrait {
       font-size: $title-sm;

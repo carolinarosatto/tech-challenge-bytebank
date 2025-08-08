@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Button from "@/components/Button";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -24,7 +25,9 @@ export default function Header() {
       </div>
       <div className={styles.buttons}>
         <Button label="Abrir conta" />
-        <Button label="Já tenho conta" priority="secondary" />
+        <Link href={"/home"}>
+          <Button label="Já tenho conta" priority="secondary" />
+        </Link>
       </div>
     </header>
   );
