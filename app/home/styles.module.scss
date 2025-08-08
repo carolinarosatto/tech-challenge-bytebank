@@ -27,13 +27,18 @@
 .content {
   padding: $padding-md;
   width: 100%;
-  height: 80%;
+  height: 93%;
   display: flex;
   flex-direction: row;
+  gap: $margin-md;
+
+  @include tablet-portrait {
+    flex-direction: column;
+    height: auto;
+  }
 }
 
 .left {
-  margin-right: $margin-md;
   height: 100%;
   flex: 1;
   display: flex;

@@ -1,9 +1,14 @@
 @use "../../../../styles/tokens.scss" as *;
 
+.container {
+  height: 100%;
+}
+
 .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1;
 }
 
 .title {

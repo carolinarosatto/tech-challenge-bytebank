@@ -2,19 +2,9 @@
 
 import Button from "@/components/Button";
 import styles from "./styles.module.scss";
-import HomeIcon from "@mui/icons-material/Home";
-import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import PaidIcon from "@mui/icons-material/Paid";
+import { items } from "@/utils";
 
-const items = [
-  { icon: HomeIcon, label: "Início" },
-  { icon: CurrencyExchangeIcon, label: "Transferências" },
-  { icon: PaidIcon, label: "Investimentos" },
-  { icon: AccountBalanceIcon, label: "Outros serviços" },
-];
-
-export default function Menu() {
+export default function MenuSide() {
   return (
     <div className={styles.container}>
       <div className={styles.buttons}>

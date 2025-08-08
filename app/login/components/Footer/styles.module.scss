@@ -11,6 +11,10 @@
   padding: $padding-lg $padding-none;
   color: $color-text-100;
 
+  a {
+    color: $color-text-100;
+  }
+
   @include mobile-only {
     flex-direction: column;
     padding: $padding-lg;
