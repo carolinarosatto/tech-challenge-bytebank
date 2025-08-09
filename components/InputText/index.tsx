@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 
 type InputTextProps = {
+  name: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
@@ -12,6 +13,7 @@ type InputTextProps = {
 };
 
 export default function InputText({
+  name = "",
   value,
   onChange,
   placeholder = "",
@@ -24,6 +26,7 @@ export default function InputText({
     <div className={styles.inputContainer}>
       {labelText && <label className={styles.label}>{labelText}</label>}
       <input
+        name={name}
         value={value}
         onChange={onChange}
         placeholder={placeholder}

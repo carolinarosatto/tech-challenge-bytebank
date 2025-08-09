@@ -23,6 +23,12 @@ export function formatCurrency(value: number): string {
   }).format(value);
 }
 
+export function parseCurrencyInput(rawValue: string): number {
+  const numericString = rawValue.replace(/\D/g, "");
+  const parsed = parseFloat(numericString) / 100 || 0;
+  return parsed;
+}
+
 export const items = [
   { icon: HomeIcon, label: "Início" },
   { icon: CurrencyExchangeIcon, label: "Transferências" },

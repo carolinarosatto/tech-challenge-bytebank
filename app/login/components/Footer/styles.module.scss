@@ -28,4 +28,10 @@
   .title {
     font-weight: $font-weight-bold;
   }
+
+  .container {
+    @include mobile-only {
+      margin: $margin-md $margin-none;
+    }
+  }
 }

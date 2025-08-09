@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import { ExpandMore } from "@mui/icons-material";
 
 export interface InputSelectProps {
+  name: string;
   labelText?: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
@@ -14,6 +15,7 @@ export interface InputSelectProps {
 export default function InputSelect({
   labelText,
   value,
+  name = "",
   onChange,
   options,
   placeholder,
@@ -24,6 +26,7 @@ export default function InputSelect({
       {labelText && <label className={styles.label}>{labelText}</label>}
       <div className={styles.selectWrapper}>
         <select
+          name={name}
           className={styles.select}
           value={value}
           onChange={onChange}

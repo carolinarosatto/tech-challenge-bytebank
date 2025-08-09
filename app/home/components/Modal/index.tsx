@@ -6,18 +6,82 @@ import InputSelect from "@/components/InputSelect";
 import Button from "@/components/Button";
 import { createPortal } from "react-dom";
 import { useMounted } from "../../hooks";
+import { Transaction, TransactionType } from "@/models/Transaction";
+import { useState, useEffect } from "react";
+import { formatCurrency, parseCurrencyInput } from "@/utils";
 
 type ModalProps = {
+  initialData: Transaction;
   isOpened: boolean;
+  onSave: (data: Partial<Transaction>) => void;
   handleModal: () => void;
 };
 
-export default function Modal({ isOpened, handleModal }: ModalProps) {
+export default function Modal({
+  isOpened,
+  handleModal,
+  onSave,
+  initialData,
+}: ModalProps) {
   const mounted = useMounted();
+  const [data, setData] = useState(initialData);
 
-  if (!mounted || !isOpened) return null;
+  useEffect(() => {
+    if (isOpened && initialData) {
+      setData(initialData);
+    }
+  }, [isOpened, initialData]);
+
+  if (!mounted || !isOpened || !initialData) return null;
 
   const doc = document.body;
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
+  ) => {
+    const { name, value } = e.target;
+
+    if (name === "type") {
+      const newType = value as TransactionType;
+      setData(
+        (prev) =>
+          new Transaction(
+            prev.id,
+            prev.clientId,
+            prev.amount,
+            prev.date,
+            Transaction.getDirectionFromType(newType),
+            newType
+          )
+      );
+    } else if (name === "amount") {
+      const newAmount = parseCurrencyInput(value);
+
+      setData(
+        (prev) =>
+          new Transaction(
+            prev.id,
+            prev.clientId,
+            newAmount,
+            prev.date,
+            prev.direction,
+            prev.type
+          )
+      );
+    }
+  };
+
+  const onHandleSave = () => {
+    const updated = new Transaction(
+      data.id,
+      data.clientId,
+      data.amount,
+      data.date,
+      data.direction,
+      data.type
+    );
+    onSave(updated);
+  };
 
   return (
     <>
@@ -30,10 +94,11 @@ export default function Modal({ isOpened, handleModal }: ModalProps) {
             <p className={styles.title}>Editar transação</p>
             <div className={styles.inputs}>
               <InputSelect
-                value=""
+                name="type"
+                value={data.type}
                 labelText="Selecione o tipo de transação"
                 placeholder="Selecione o tipo de transação"
-                onChange={() => {}}
+                onChange={handleChange}
                 options={[
                   { value: "depósito", label: "Depósito" },
                   { value: "saque", label: "Saque" },
@@ -44,9 +109,10 @@ export default function Modal({ isOpened, handleModal }: ModalProps) {
                 ]}
               />
               <InputText
+                name="amount"
                 labelText="Insira o valor"
-                value=""
-                onChange={() => {}}
+                value={formatCurrency(data.amount)}
+                onChange={handleChange}
               />
             </div>
             <div className={styles.buttons}>
@@ -56,7 +122,7 @@ export default function Modal({ isOpened, handleModal }: ModalProps) {
                 size="large"
                 onClick={handleModal}
               />
-              <Button label="Confirmar" size="large" />
+              <Button label="Confirmar" size="large" onClick={onHandleSave} />
             </div>
           </dialog>
         </div>,

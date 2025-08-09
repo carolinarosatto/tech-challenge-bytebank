@@ -13,17 +13,35 @@ type TransactionItemProps = {
   transaction: Transaction;
   hasDivider?: boolean;
   isOpened?: boolean;
+  onUpdate: (updated: Transaction) => void;
+  onDelete: (deleted: Transaction) => void;
 };
 
 export default function TransactionItem({
   id,
   transaction,
   hasDivider = true,
+  onUpdate,
+  onDelete,
 }: TransactionItemProps) {
   const [isOpen, setisOpen] = useState(false);
 
   const handleModal = () => {
     setisOpen((prev) => !prev);
+  };
+
+  const handleSave = (updatedData: Partial<Transaction>) => {
+    setisOpen((prev) => !prev);
+    const updated = new Transaction(
+      transaction.id,
+      updatedData.clientId ?? transaction.clientId,
+      updatedData.amount ?? transaction.amount,
+      updatedData.date ?? transaction.date,
+      updatedData.direction ?? transaction.direction,
+      updatedData.type ?? transaction.type
+    );
+    onUpdate(updated);
+    setisOpen(false);
   };
 
   const isCashWithdrawal = transaction.direction === "outcome";
@@ -40,7 +58,6 @@ export default function TransactionItem({
               size="small"
               icon={<EditIcon />}
               onClick={() => {
-                console.log("Abriu um modal" + transaction.id);
                 handleModal();
               }}
             />
@@ -48,6 +65,7 @@ export default function TransactionItem({
               priority="tertiary"
               size="small"
               icon={<DeleteIcon />}
+              onClick={() => onDelete(transaction)}
             />
           </div>
           <div className={styles.rightColumn}>
@@ -61,7 +79,12 @@ export default function TransactionItem({
           </div>
         </div>
         {hasDivider ? <Divider weight="bold" /> : null}
-        <Modal isOpened={isOpen} handleModal={handleModal} />
+        <Modal
+          isOpened={isOpen}
+          handleModal={handleModal}
+          onSave={handleSave}
+          initialData={transaction}
+        />
       </div>
     </>
   );

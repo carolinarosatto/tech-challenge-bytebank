@@ -8,7 +8,7 @@ import InputText from "@/components/InputText";
 import Button from "@/components/Button";
 import { Transaction, TransactionType } from "@/models/Transaction";
 import { useState } from "react";
-import { formatCurrency } from "@/utils";
+import { formatCurrency, parseCurrencyInput } from "@/utils";
 
 interface NewTransactionCardProps {
   onAdd: (transaction: Transaction) => void;
@@ -42,19 +42,14 @@ export default function NewTransactionCard({ onAdd }: NewTransactionCardProps) {
         <div className={styles.content}>
           <Image
             src="/dashboard_img.png"
-            width={0}
+            width={416}
             height={0}
-            sizes="100vw"
-            style={{
-              width: "26rem",
-              height: "auto",
-              display: "flex",
-              alignSelf: "center",
-            }}
+            className={styles.img}
             alt=""
           />
           <h3 className={styles.title}>Nova transação</h3>
           <InputSelect
+            name="type"
             value={type}
             labelText="Selecione o tipo de transação"
             placeholder="Selecione o tipo de transação"
@@ -70,12 +65,11 @@ export default function NewTransactionCard({ onAdd }: NewTransactionCardProps) {
           />
           <div style={{ height: "1.5rem" }}></div>
           <InputText
+            name="amount"
             value={formatCurrency(amount).toString()}
             onChange={(e) => {
-              const rawValue = e.target.value;
-              const numericString = rawValue.replace(/\D/g, "");
-              const parsed = parseFloat(numericString) / 100 || 0;
-              setAmount(parsed);
+              const parsedAmount = parseCurrencyInput(e.target.value);
+              setAmount(parsedAmount);
             }}
             labelText="Valor"
             placeholder="Digite o valor"
