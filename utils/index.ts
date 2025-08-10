@@ -30,8 +30,8 @@ export function parseCurrencyInput(rawValue: string): number {
 }
 
 export const items = [
-  { icon: HomeIcon, label: "Início" },
-  { icon: CurrencyExchangeIcon, label: "Transferências" },
-  { icon: PaidIcon, label: "Investimentos" },
-  { icon: AccountBalanceIcon, label: "Outros serviços" },
+  { icon: HomeIcon, label: "Início", href: "/" },
+  { icon: CurrencyExchangeIcon, label: "Transferências", href: "" },
+  { icon: PaidIcon, label: "Investimentos", href: "" },
+  { icon: AccountBalanceIcon, label: "Outros serviços", href: "" },
 ];

@@ -53,20 +53,22 @@ export default function TransactionItem({
           <div className={styles.leftColumn}>
             <p className={styles.title}>{capitalize(transaction.type)}</p>
             <p className={styles.date}>{formatDate(transaction.date)}</p>
-            <IconButton
-              priority="tertiary"
-              size="small"
-              icon={<EditIcon />}
-              onClick={() => {
-                handleModal();
-              }}
-            />
-            <IconButton
-              priority="tertiary"
-              size="small"
-              icon={<DeleteIcon />}
-              onClick={() => onDelete(transaction)}
-            />
+            <div className={styles.buttons}>
+              <IconButton
+                priority="tertiary"
+                size="small"
+                icon={<EditIcon />}
+                onClick={() => {
+                  handleModal();
+                }}
+              />
+              <IconButton
+                priority="tertiary"
+                size="small"
+                icon={<DeleteIcon />}
+                onClick={() => onDelete(transaction)}
+              />
+            </div>
           </div>
           <div className={styles.rightColumn}>
             <p

@@ -4,22 +4,26 @@ import Button from "@/components/Button";
 import styles from "./styles.module.scss";
 import { items } from "@/utils";
 
+import Link from "next/link";
+
 export default function MenuSide() {
   return (
     <div className={styles.container}>
       <div className={styles.buttons}>
-        {items.map(({ icon, label }) => {
+        {items.map(({ icon, label, href }) => {
           const IconComponent = icon;
           return (
-            <Button
-              key={label}
-              label={label}
-              priority="tertiary"
-              reverse
-              size="large"
-              iconLeft={<IconComponent />}
-              onClick={() => {}}
-            />
+            <Link key={label} href={href}>
+              <Button
+                key={label}
+                label={label}
+                priority="tertiary"
+                reverse
+                size="large"
+                iconLeft={<IconComponent />}
+                onClick={() => {}}
+              />
+            </Link>
           );
         })}
       </div>

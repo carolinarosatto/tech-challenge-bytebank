@@ -14,9 +14,9 @@ export default function MainContent() {
       <div className={styles.imageBox}>
         <Image
           className={styles.image}
-          width={0}
           height={0}
-          sizes="100vw"
+          width={0}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           style={{ width: "28rem", height: "auto" }}
           src="/lp_img.png"
           alt=""

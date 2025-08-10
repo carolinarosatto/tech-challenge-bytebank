@@ -14,6 +14,7 @@ O sistema possui uma primeira página de apresentação, e uma área onde são a
 - [ESLint](https://eslint.org/) – Padronização e análise de código
 - Outras bibliotecas:
 - [MUI Icons](https://mui.com/material-ui/material-icons) - Ícones para composição do layout
+- [react-responsive](https://www.npmjs.com/package/react-responsive) - Facilita a manipulação do DOM usando queries diretamente no ts.
 
 ---
 

@@ -29,6 +29,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    // border: 1px solid magenta;
   }
   .navList {
     list-style: none;
@@ -55,6 +56,10 @@
         font-size: $body-sm;
       }
     }
+
+    @include mobile-only {
+      display: none;
+    }
   }
 
   .buttons {
@@ -63,6 +68,17 @@
     gap: 1rem;
     @include tablet-portrait {
       gap: 0.5rem;
+    }
+
+    @include mobile-only {
+      display: none;
+    }
+  }
+
+  .menuIcon {
+    display: none;
+    @include mobile-only {
+      display: block;
     }
   }
 }

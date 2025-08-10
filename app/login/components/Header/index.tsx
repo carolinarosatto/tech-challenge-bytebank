@@ -1,11 +1,18 @@
+"use client";
+
 import React from "react";
 import styles from "./styles.module.scss";
 import Button from "@/components/Button";
 import Link from "next/link";
+import IconButton from "@/components/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function Header() {
   return (
     <header className={styles.header}>
+      <div className={styles.menuIcon}>
+        <IconButton icon={<MenuIcon />} priority="tertiary" />
+      </div>
       <div className={styles.leftContainer}>
         <p className={styles.logo}>bytebank</p>
         <nav className={styles.nav}>

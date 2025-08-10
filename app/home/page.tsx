@@ -9,10 +9,14 @@ import StatementList from "./components/StatementList";
 import styles from "./styles.module.scss";
 import { useState } from "react";
 import { transactions as mockTransactions } from "@/data/index";
+import { useMediaQuery } from "react-responsive";
 
 export default function Home() {
   const [transactions, setTransactions] =
     useState<Transaction[]>(mockTransactions);
+
+  const isTablet = useMediaQuery({ minWidth: 600, maxWidth: 1199 });
+  const isMobile = useMediaQuery({ maxWidth: 599 });
 
   const handleAddTransaction = (tx: Transaction) => {
     setTransactions((prev) => [tx, ...prev]);
@@ -30,11 +34,27 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <MenuResponsive />
-      <div className={styles.main}>
-        <div className={styles.layout}>
-          <Header />
+      {!isMobile && !isTablet && (
+        <div className={styles.menuDesktop}>
+          <MenuResponsive />
         </div>
+      )}
+
+      <div className={styles.main}>
+        <div className={styles.layout}>{!isMobile && <Header />}</div>
+
+        {isTablet && (
+          <div className={styles.menuTablet}>
+            <MenuResponsive />
+          </div>
+        )}
+
+        {isMobile && (
+          <div className={styles.menuMobile}>
+            <MenuResponsive />
+          </div>
+        )}
+
         <div className={styles.content}>
           <div className={styles.left}>
             <BalanceCard transactions={transactions} />

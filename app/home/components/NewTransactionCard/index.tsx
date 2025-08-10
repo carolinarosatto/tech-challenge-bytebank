@@ -42,8 +42,9 @@ export default function NewTransactionCard({ onAdd }: NewTransactionCardProps) {
         <div className={styles.content}>
           <Image
             src="/dashboard_img.png"
-            width={416}
             height={0}
+            width={0}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className={styles.img}
             alt=""
           />

@@ -7,21 +7,75 @@
   height: 100vh;
   background-color: $color-brand-100;
   overflow: hidden;
+  flex-direction: row;
+
+  @include tablet-portrait {
+    flex-direction: column;
+  }
+
+  @include mobile-only {
+    flex-direction: column;
+  }
 }
 
-.main {
+.menuDesktop {
   display: flex;
-  flex-direction: column;
-  flex: 1;
-  overflow: auto;
+}
+.menuTablet {
+  display: none;
 }
 
+.menuMobile {
+  display: none;
+}
+
+@include tablet-portrait {
+  .menuDesktop {
+    display: none;
+  }
+
+  .menuTablet {
+    display: block;
+  }
+
+  .menuMobile {
+    display: none;
+  }
+}
+
+@include mobile-only {
+  .menuDesktop {
+    display: none;
+  }
+
+  .menuTablet {
+    display: none;
+  }
+
+  .menuMobile {
+    display: block;
+  }
+}
+
+/* Header visível só em tablet e desktop */
 .layout {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: flex-end;
+  @include mobile-only {
+    display: none;
+  }
+}
+
+/* Resto do CSS original */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: auto;
 }
 
 .content {
@@ -33,6 +87,11 @@
   gap: $margin-md;
 
   @include tablet-portrait {
+    flex-direction: column;
+    height: auto;
+  }
+
+  @include mobile-only {
     flex-direction: column;
     height: auto;
   }

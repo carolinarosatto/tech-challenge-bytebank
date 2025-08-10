@@ -1,0 +1,7 @@
+@use "../../../../styles/tokens.scss" as *;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: $margin-md;
+}

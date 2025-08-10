@@ -99,3 +99,11 @@ $border-width-none: 0px;
 $border-width-sm: 1px; // 1px
 $border-width-md: 2px; // 2px
 $border-width-lg: 4px; // 4px
+
+// Breakpoints
+$mobile-max: 599px;
+$tablet-min: 600px;
+$tablet-max: 1199px;
+$desktop-min: 1200px;
+$desktop-max: 1799px;
+$desktop-lg-min: 1800px;

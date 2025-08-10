@@ -1,19 +1,18 @@
-import { useEffect, useState } from "react";
+"use client";
+import { useMediaQuery } from "react-responsive";
 import MenuSide from "../MenuSide";
 import MenuHorizontal from "../MenuHorizontal";
-// import MenuHamburguer from "./MenuHamburguer";
+import MenuHamburger from "../MenuHamburger";
 
 export default function MenuResponsive() {
-  const [width, setWidth] = useState<number>(0);
+  const isDesktop = useMediaQuery({ minWidth: 1200, maxWidth: 1799 });
+  const isTablet = useMediaQuery({ minWidth: 600, maxWidth: 1199 });
+  const isMobile = useMediaQuery({ maxWidth: 599 });
+  const isDesktopLg = useMediaQuery({ minWidth: 1800 });
 
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  if (width > 1200) return <MenuSide />;
-  if (width > 768) return <MenuHorizontal />;
-  // return <MenuHamburguer />;
+  if (isDesktop) return <MenuSide />;
+  if (isDesktopLg) return <MenuSide />;
+  if (isTablet) return <MenuHorizontal />;
+  if (isMobile) return <MenuHamburger />;
+  return null;
 }
