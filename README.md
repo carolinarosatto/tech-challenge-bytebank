@@ -1,7 +1,7 @@
 # 📊 Tech Challenge - Fase 1 - Front-end Engineering
 
 Aplicação desenvolvida em **Next.js** como parte do projeto de pós-graduação, com foco em **POO** e **princípios SOLID**.  
-O sistema possui uma primeira página de apresentação, e uma área onde são apresentadas transações financeiras e uma simulação de CRUD de transações. Atualmente, os dados são mockados, focando no
+O sistema possui uma primeira página de apresentação, e uma área onde são apresentadas transações financeiras e uma simulação de CRUD de transações. Atualmente, os dados são mockados, focando no layout.
 
 ---
 
